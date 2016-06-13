@@ -10,6 +10,10 @@
   {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="elements.html">
+  
 </head>
 <body>
   <demo-app>Loading...</demo-app>
@@ -18,9 +22,12 @@
 
     {{#each scripts.polyfills}}<script src="{{.}}"></script>{{/each}}
     <script>
+      document.addEventListener('WebComponentsReady', function() {
       System.import('system-config.js').then(function () {
         System.import('main');
       }).catch(console.error.bind(console));
+      });
+      
     </script>
 
   

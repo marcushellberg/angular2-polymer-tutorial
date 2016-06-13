@@ -1,3 +1,15 @@
 <h1>
   {{title}}
 </h1>
+
+<paper-input label="Filter by first name" (keyup)="filterPeople($event)"></paper-input>
+
+<vaadin-grid [items]="filteredPeople">
+  <table>
+    <colgroup>
+      <col name="firstName">
+      <col name="lastName">
+      <col name="email">
+    </colgroup>
+  </table>
+</vaadin-grid>
