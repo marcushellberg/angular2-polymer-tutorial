@@ -20,6 +20,7 @@ const barrels: string[] = [
   '@angular/core',
   '@angular/common',
   '@angular/compiler',
+  '@angular/forms', // added
   '@angular/http',
   '@angular/router',
   '@angular/platform-browser',
